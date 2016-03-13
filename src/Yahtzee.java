@@ -14,8 +14,8 @@ public class Yahtzee {
     public int ones(){
         int total = 0;
 
-        for(int i = 0; i < inputDie.length; i++){
-            if(inputDie[i] == 1){
+        for (int dice : inputDie) {
+            if (dice == 1) {
                 total++;
             }
         }
@@ -25,6 +25,12 @@ public class Yahtzee {
 
     public int twos(){
         int total = 0;
+
+        for (int dice : inputDie) {
+            if (dice == 2) {
+                total += 2;
+            }
+        }
 
         return total;
     }
