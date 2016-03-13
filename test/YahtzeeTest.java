@@ -1,5 +1,4 @@
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 
 public class YahtzeeTest {
@@ -20,4 +19,10 @@ public class YahtzeeTest {
         Assert.assertEquals(0, new Yahtzee(3, 4, 5, 4, 3).twos());
     }
 
+    @Test
+    public void threesTests(){
+        Assert.assertEquals(6, new Yahtzee(3, 3, 1, 1, 1).threes());
+        Assert.assertEquals(12, new Yahtzee(3, 3, 3, 3, 4).threes());
+        Assert.assertEquals(0, new Yahtzee(1,2, 4,5, 4).threes());
+    }
 }

@@ -34,4 +34,16 @@ public class Yahtzee {
 
         return total;
     }
+
+    public int threes(){
+        int total = 0;
+
+        for(int dice : inputDie){
+            if(dice == 3){
+                total += 3;
+            }
+        }
+
+        return total;
+    }
 }
