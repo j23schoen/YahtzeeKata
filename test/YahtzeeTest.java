@@ -88,4 +88,11 @@ public class YahtzeeTest {
         Assert.assertEquals(0, new Yahtzee(1, 2, 3, 4, 5).largeStraight());
         Assert.assertEquals(20, new Yahtzee(3, 4, 5, 6, 2).largeStraight());
     }
+
+    @Test
+    public void fullHouseTest(){
+        Yahtzee game = new Yahtzee();
+        Assert.assertEquals(18, game.fullHouse(6, 2, 2, 2, 6));
+        Assert.assertEquals(0, game.fullHouse(1, 2, 3, 4, 5));
+    }
 }

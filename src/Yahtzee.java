@@ -198,5 +198,41 @@ public class Yahtzee {
     }
 
 
+    public int fullHouse(int d1, int d2, int d3, int d4, int d5){
+        int total = 0;
+        int i;
+        int[] array = new int[6];
+        array[d1-1]++;
+        array[d2-1]++;
+        array[d3-1]++;
+        array[d4-1]++;
+        array[d5-1]++;
+
+        int sumOfTwoPair = 0;
+        int sumOfThreePair = 0;
+        boolean twoPairFound = false;
+        boolean threePairFound = false;
+
+        for(i = 0; i != 6; i++){
+            if(array[i] == 2){
+                twoPairFound = true;
+                sumOfTwoPair = i + 1;
+            }
+        }
+
+        for(i = 0; i != 6; i++){
+            if(array[i] == 3){
+                threePairFound = true;
+                sumOfThreePair = i + 1;
+            }
+        }
+
+        if(twoPairFound && threePairFound){
+            total = sumOfTwoPair * 2 + sumOfThreePair * 3;
+        }
+
+
+        return total;
+    }
 
 }
