@@ -46,4 +46,40 @@ public class Yahtzee {
 
         return total;
     }
+
+    public int fours(){
+        int total = 0;
+
+        for(int dice : inputDie){
+            if (dice == 4){
+                total += 4;
+            }
+        }
+
+        return total;
+    }
+
+    public int fives(){
+        int total = 0;
+
+        for(int dice : inputDie){
+            if (dice == 5){
+                total += 5;
+            }
+        }
+
+        return total;
+    }
+
+    public int sixes(){
+        int total = 0;
+
+        for(int dice : inputDie){
+            if (dice == 6){
+                total += 6;
+            }
+        }
+
+        return total;
+    }
 }
