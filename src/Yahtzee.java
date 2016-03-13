@@ -11,6 +11,7 @@ public class Yahtzee {
         inputDie[4] = d5;
     }
 
+
     public int ones(){
         int total = 0;
 
@@ -82,4 +83,26 @@ public class Yahtzee {
 
         return total;
     }
+
+    public int pairs(){
+        int highTotal = 0;
+
+        for(int i = 0; i < inputDie.length; i++){
+
+            for(int m = i + 1; m < inputDie.length; m++){
+
+                if(inputDie[i] == inputDie[m]){
+
+                    if(inputDie[i] + inputDie[m] > highTotal){
+                        highTotal = inputDie[i] + inputDie[m];
+                    }
+                }
+            }
+        }
+
+        return highTotal;
+    }
+
+
+
 }
