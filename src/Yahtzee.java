@@ -2,6 +2,7 @@ public class Yahtzee {
 
 
     int[] inputDie;
+
     public Yahtzee(int d1, int d2, int d3, int d4, int d5) {
         inputDie = new int[5];
         inputDie[0] = d1;
@@ -11,6 +12,9 @@ public class Yahtzee {
         inputDie[4] = d5;
     }
 
+    public Yahtzee(){
+
+    }
 
     public int ones(){
         int total = 0;
@@ -126,5 +130,40 @@ public class Yahtzee {
         }
     }
 
+    public int threeOfAKind(int d1, int d2, int d3, int d4, int d5){
+        int total = 0;
+        int[] array = new int[6];
+        array[d1-1]++;
+        array[d2-1]++;
+        array[d3-1]++;
+        array[d4-1]++;
+        array[d5-1]++;
+
+        for(int i = 0; i != 6; i++){
+            if(array[i] >= 3){
+                total = (i+1) * 3;
+            }
+        }
+
+        return total;
+    }
+
+    public int fourOfAKind(int d1, int d2, int d3, int d4, int d5){
+        int total = 0;
+        int[] array = new int[6];
+        array[d1-1]++;
+        array[d2-1]++;
+        array[d3-1]++;
+        array[d4-1]++;
+        array[d5-1]++;
+
+        for(int i = 0; i != 6; i++){
+            if(array[i] >= 4){
+                total = (i+1) * 4;
+            }
+        }
+
+        return total;
+    }
 
 }

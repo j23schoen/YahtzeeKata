@@ -60,4 +60,18 @@ public class YahtzeeTest {
         Assert.assertEquals(14, new Yahtzee(4, 4, 2, 3, 3).twoPairs());
         Assert.assertEquals(0, new Yahtzee(4, 3, 2, 2, 1).twoPairs());
     }
+
+    @Test
+    public void threeOfAKindTest(){
+        Yahtzee game = new Yahtzee();
+        Assert.assertEquals(12, game.threeOfAKind(4, 4, 4, 5, 5));
+        Assert.assertEquals(15, game.threeOfAKind(5, 4, 5, 1, 5));
+    }
+
+    @Test
+    public void fourOfAKindTest(){
+        Yahtzee game = new Yahtzee();
+        Assert.assertEquals(4, game.fourOfAKind(1, 2, 1, 1, 1));
+        Assert.assertEquals(8, game.fourOfAKind(2, 5, 2, 2, 2));
+    }
 }
