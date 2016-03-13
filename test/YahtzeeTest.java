@@ -74,4 +74,18 @@ public class YahtzeeTest {
         Assert.assertEquals(4, game.fourOfAKind(1, 2, 1, 1, 1));
         Assert.assertEquals(8, game.fourOfAKind(2, 5, 2, 2, 2));
     }
+
+    @Test
+    public void smallStraightTest(){
+        Assert.assertEquals(15, new Yahtzee(1, 2, 3, 4, 5).smallStraight());
+        Assert.assertEquals(0, new Yahtzee(1, 2, 3, 3, 4).smallStraight());
+        Assert.assertEquals(0, new Yahtzee(1, 2, 3, 4, 6).smallStraight());
+    }
+
+    @Test
+    public void largeStraightTest(){
+        Assert.assertEquals(20, new Yahtzee(2, 3, 4, 5, 6).largeStraight());
+        Assert.assertEquals(0, new Yahtzee(1, 2, 3, 4, 5).largeStraight());
+        Assert.assertEquals(20, new Yahtzee(3, 4, 5, 6, 2).largeStraight());
+    }
 }

@@ -1,3 +1,6 @@
+import java.util.HashSet;
+import java.util.concurrent.SynchronousQueue;
+
 public class Yahtzee {
 
 
@@ -165,5 +168,35 @@ public class Yahtzee {
 
         return total;
     }
+
+    public int smallStraight(){
+        HashSet<Integer> s = new HashSet<>();
+        for(Integer dice : inputDie){
+            if(!s.add(dice)){
+                return 0;
+            }
+            else if(dice == 6){
+                return 0;
+            }
+        }
+
+        return 15;
+    }
+
+    public int largeStraight(){
+        HashSet<Integer> s = new HashSet<>();
+        for(Integer dice : inputDie){
+            if(!s.add(dice)){
+                return 0;
+            }
+            else if(dice == 1){
+                return 0;
+            }
+        }
+
+        return 20;
+    }
+
+
 
 }
