@@ -103,6 +103,28 @@ public class Yahtzee {
         return highTotal;
     }
 
+    public int twoPairs(){
+        int total = 0;
+        int count = 0;
+
+        for(int i = 0; i < inputDie.length; i++){
+
+            for(int m = i + 1; m < inputDie.length; m++){
+
+                if(inputDie[i] == inputDie[m]){
+                    total += inputDie[i] + inputDie[m];
+                    count++;
+                }
+            }
+        }
+
+        if(count > 1){
+            return total;
+        }
+        else {
+            return 0;
+        }
+    }
 
 
 }

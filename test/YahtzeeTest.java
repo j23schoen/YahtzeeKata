@@ -53,4 +53,11 @@ public class YahtzeeTest {
         Assert.assertEquals(10, new Yahtzee(5, 5, 4, 2, 2).pairs());
         Assert.assertEquals(12, new Yahtzee(6, 4, 3, 4, 6).pairs());
     }
+
+    @Test
+    public void twoPairTest(){
+        Assert.assertEquals(8, new Yahtzee(1, 1, 2, 3, 3).twoPairs());
+        Assert.assertEquals(14, new Yahtzee(4, 4, 2, 3, 3).twoPairs());
+        Assert.assertEquals(0, new Yahtzee(4, 3, 2, 2, 1).twoPairs());
+    }
 }
